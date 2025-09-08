@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  benchmark:
+    build: .
+    volumes:
+      - ./results:/benchmark/results
+    environment:
+      - TERM=xterm-256color
