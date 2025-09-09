@@ -1,4 +1,5 @@
 # prime_finder.py
+import sys
 import time
 import math
 
@@ -45,3 +46,4 @@ if __name__ == "__main__":
     
     print(f"Primes up to 10^10: {result}")
     print(f"Time: {end - start:.2f} seconds")
+    sys.exit(0) 
