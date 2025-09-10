@@ -300,7 +300,7 @@ This benchmark opened up several interesting research directions:
 - **Memory allocation patterns**: Deep dive into allocator performance
 - **Profile-guided optimization**: Can runtime profiling improve performance further?
 
-## 💡 The Bigger Picture
+## The Bigger Picture
 
 This journey reinforced that **performance is multifaceted**:
 - Raw computational speed
@@ -317,7 +317,7 @@ The "fastest" language depends entirely on your constraints and priorities. But 
 
 *What would you benchmark next? Share your performance discoveries and let's keep learning together!*
 
-## 📁Complete Source Code
+## Complete Source Code
 
 All code, scripts, and Docker configurations are available in the [prime_benchmark repository](.), including:
 - Complete implementations in all 9 languages
