@@ -4,11 +4,11 @@
 
 ---
 
-## 🚀 The Quest Begins
+##  The Quest Begins
 
 Like many developers, I was curious: **Which programming language is truly the fastest?** Armed with a prime number algorithm and a Docker container, I set out to benchmark 9 different programming languages. What I discovered was far more educational than I expected.
 
-## 📋 The Experiment Setup
+##  The Experiment Setup
 
 I implemented the same **segmented sieve algorithm** to find all prime numbers up to 10 billion (10^10) in:
 
@@ -22,7 +22,7 @@ Each implementation used the same core algorithm:
 2. Use segmented sieveing with 1MB segments to count remaining primes
 3. Return the total count: **455,052,511 primes**
 
-## 🐳 Docker: The Great Equalizer
+##  Docker: The Great Equalizer
 
 To ensure fair comparison, I containerized everything:
 
@@ -56,13 +56,13 @@ CMD ["./benchmark.sh"]
 
 **Lessons learned**: Always test your Docker builds incrementally!
 
-## 🏁 First Results: The Shocking Truth
+##  First Results: The Shocking Truth
 
 ```
 ===== Initial Benchmark Results =====
 Language     Time(s)
 --------     -------
-Elixir       0.217    🤔 Wait, what?
+Elixir       0.217     Wait, what?
 C            15.29
 Go           28.51
 Java         29.11
@@ -84,9 +84,9 @@ After implementing a proper Elixir solution, here were the corrected results:
 ```
 Language     Time(s)    Notes
 --------     -------    -----
-C            15.29      🥇 Compiled, optimized
-Go           28.51      🥈 Great defaults
-Java         29.11      🥉 JIT optimization
+C            15.29       Compiled, optimized
+Go           28.51       Great defaults
+Java         29.11       JIT optimization
 Rust         32.38      Zero-cost abstractions cost something
 C++          51.39      Template overhead?
 Elixir       ~120       Functional programming trade-offs
@@ -95,7 +95,7 @@ PHP          1020.72    Interpreted overhead
 Python       1612.73    Beautiful but slow
 ```
 
-## 🎯 The Optimization Revelation
+## The Optimization Revelation
 
 But wait—I was comparing languages compiled with different optimization levels! This led to the most educational part of the journey.
 
@@ -141,7 +141,7 @@ rustc -C opt-level=3 -C target-cpu=native prime_finder.rs
 # Result: 38.65 seconds
 ```
 
-## 🧠 Why Go Beat Rust: The Technical Deep Dive
+##  Why Go Beat Rust: The Technical Deep Dive
 
 Even with maximum optimization, Rust (38.68s) was slower than Go (28.51s). Here's why:
 
@@ -175,7 +175,7 @@ for i in 0..=high-low {                               // Range validation
 - Go compiler: Optimized for slice manipulation and loops
 - Rust compiler: Optimized for memory safety with performance
 
-## 💾 Memory Usage Patterns: The Hidden Story
+##  Memory Usage Patterns: The Hidden Story
 
 Using `/usr/bin/time -v`, I analyzed memory consumption:
 
@@ -184,9 +184,9 @@ Memory Usage Analysis:
 Language    Max Memory (KB)   Context Switches
 --------    ---------------   ----------------
 C -O3       2,652            2,322
-C -Ofast    2,376            1,321  ⭐ Most efficient
+C -Ofast    2,376            1,321   Most efficient
 Rust -O3    2,976            641
-Rust -O0    2,992            30,312  ⚠️ Debug penalty
+Rust -O0    2,992            30,312  Debug penalty
 ```
 
 **Key discoveries:**
@@ -194,15 +194,15 @@ Rust -O0    2,992            30,312  ⚠️ Debug penalty
 - **C -Ofast used least memory** (2.3 MB vs 2.9 MB for Rust)
 - **Debug builds are memory-inefficient** with 10x more context switches
 
-## 📊 Final Performance Hierarchy
+## Final Performance Hierarchy
 
 After accounting for optimization levels:
 
 | Rank | Language | Time (s) | Memory (MB) | Compilation | Notes |
 |------|----------|----------|-------------|-------------|-------|
-| 🥇 | **C (-O3)** | 14.92 | 2.65 | Ahead-of-time | Still the king |
-| 🥈 | **Go** | 28.51 | ~3.0 | Ahead-of-time | Best defaults |
-| 🥉 | **Java** | 29.11 | ~4.0 | JIT | Impressive warmup |
+| 1 | **C (-O3)** | 14.92 | 2.65 | Ahead-of-time | Still the king |
+| 2 | **Go** | 28.51 | ~3.0 | Ahead-of-time | Best defaults |
+| 3 | **Java** | 29.11 | ~4.0 | JIT | Impressive warmup |
 | 4 | **Rust (-O3)** | 38.68 | 2.97 | Ahead-of-time | Safety has cost |
 | 5 | **C++** | 51.39 | ~3.5 | Ahead-of-time | Template overhead |
 | 6 | **Elixir** | ~120 | ~5.0 | BEAM VM | Functional elegance |
@@ -210,7 +210,7 @@ After accounting for optimization levels:
 | 8 | **PHP** | 1020.72 | ~4.0 | Interpreted | Getting better |
 | 9 | **Python** | 1612.73 | ~5.0 | Interpreted | Readability wins |
 
-## 🎓 Lessons Learned
+##  Lessons Learned
 
 ### 1. **Optimization Flags Matter More Than Language Choice**
 The difference between `-O0` and `-O3` was often **4-10x performance gain**. Always use optimization flags in production!
@@ -230,7 +230,7 @@ Small differences in how you implement the same algorithm can have significant p
 - Test with multiple optimization levels
 - Environment matters (Docker, OS, CPU)
 
-## 🛠️ Technical Implementation Details
+## 5 Technical Implementation Details
 
 The complete project structure:
 
@@ -261,7 +261,7 @@ The algorithm works in two phases:
 
 This approach keeps memory usage constant while handling very large ranges.
 
-## 🔮 What This Means for Real-World Development
+## 6 What This Means for Real-World Development
 
 ### Choose Your Language Based On:
 
@@ -280,17 +280,17 @@ This approach keeps memory usage constant while handling very large ranges.
 **Functional Programming**: Elixir, Haskell
 - Concurrent systems, fault-tolerant applications
 
-## 🎯 Key Takeaways
+## 7 Key Takeaways
 
 1. **Always use optimization flags** (`-O2` minimum, `-O3` for performance-critical code)
 2. **Profile before optimizing** (memory, CPU, I/O patterns)
 3. **Language choice matters less than algorithm choice**
 4. **Go's philosophy of good defaults is powerful**
-5. **Rust's safety guarantees do have performance costs**
+5. **Rust's safety guarantees do have performance costs** read on compile-time vs Runtime Trade-offs
 6. **C remains the performance champion** when properly optimized
 7. **Benchmarking requires careful methodology**
 
-## 🚀 Future Explorations
+## 8 Future Explorations
 
 This benchmark opened up several interesting research directions:
 
@@ -317,7 +317,7 @@ The "fastest" language depends entirely on your constraints and priorities. But 
 
 *What would you benchmark next? Share your performance discoveries and let's keep learning together!*
 
-## 📁 Complete Source Code
+## 📁Complete Source Code
 
 All code, scripts, and Docker configurations are available in the [prime_benchmark repository](.), including:
 - Complete implementations in all 9 languages
