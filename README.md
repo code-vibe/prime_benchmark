@@ -153,9 +153,9 @@ MIT License - Feel free to use this for your own learning and benchmarking needs
 
 ## 🔗 Connect
 
-- **Blog**: [https://code-vibe.github.io/code-vibe/]
-- **GitHub**: [https://github.com/code-vibe]
-- **Twitter**: [https://x.com/agentx_01]
+- **Blog**: [blog](https://code-vibe.github.io/code-vibe/)
+- **GitHub**: [github](https://github.com/code-vibe)
+- **Twitter**: [X](https://x.com/agentx_01)
 
 ---
 
