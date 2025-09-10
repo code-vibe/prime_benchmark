@@ -1,0 +1,18 @@
+So i wanted to just run a performance benchmark program for 10 diffrent programming languages and see the output. Off my head, with a litlle experience with diffrent programming language, i could imagine what the out put would look like normally, c and c++ should always take the lead, but i was shocked with the result
+===== Benchmark Results =====
+Language     Time(s)
+--------     -------
+C            15.286972137
+C++          51.385990668
+Rust         32.383124710
+Go           28.505448125
+Java         29.113111602
+C#           58.782583317
+Python       1612.727772754
+Node.js      114.349457352
+PHP          1020.719864060
+Elixir       .217170836
+=============================
+
+
+I need to do more research and understand what happened, maybe i can learn something here
