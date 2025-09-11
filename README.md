@@ -50,7 +50,7 @@ while j + p * 4 <= high {
 }
 ```
 
-Prime Number Benchmark
+### Prime Number Benchmark
 
 A comprehensive performance comparison of prime number algorithms across 9 programming languages, exploring compilation optimization, memory usage patterns, and real-world performance characteristics.
 
