@@ -300,6 +300,10 @@ This benchmark opened up several interesting research directions:
 - **Memory allocation patterns**: Deep dive into allocator performance
 - **Profile-guided optimization**: Can runtime profiling improve performance further?
 
+## What i learned personally
+
+It’s not that Go is “faster than Rust” in general, but that Rust’s runtime safety costs (bounds checks, ownership model overhead) + LLVM decisions can slow down certain memory-heavy algorithms unless carefully optimized.
+
 ## The Bigger Picture
 
 This journey reinforced that **performance is multifaceted**:
