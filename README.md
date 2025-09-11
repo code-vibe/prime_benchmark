@@ -113,8 +113,8 @@ sudo apt-get update && sudo apt-get install -y \
 
 ##  Project Structure
 
-```
-```
+```bash
+
 prime_benchmark/
 ├──  README.md                  # This file
 ├──  BLOG_POST.md              # Detailed learning journey
@@ -137,7 +137,6 @@ prime_benchmark/
 │   ├── prime_finder.php        # PHP implementation
 │   └── prime_finder.exs        # Elixir implementation
 └──  results.csv              # Benchmark output
-```
 ```
 
 ## Algorithm Details
