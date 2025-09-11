@@ -6,8 +6,10 @@
 - **Unsafe Rust can match C performance** when maximum speed is needed
 - **Optimization flags provide 4-10x performance gains**
 - **Go's defaults explain why it beats highly optimized safe Rust**
-- **Memory efficiency ≠ execution speed**
-- **Loop unrolling + unchecked access = massive gains**ance comparison of prime number algorithms across 9 programming languages, exploring compilation optimization, memory usage patterns, and **the safety vs performance trade-off in Rust**.
+- **Memory efficiency != execution speed**
+- **Loop unrolling + unchecked access = massive gains**
+
+ **the safety vs performance trade-off in Rust**.
 
 ##  Quick Results
 
@@ -46,7 +48,9 @@ unsafe { std::ptr::write_bytes(segment.as_mut_ptr(), 1, len); }
 while j + p * 4 <= high {
     // Process 4 elements per iteration
 }
-```Prime Number Benchmark
+```
+
+Prime Number Benchmark
 
 A comprehensive performance comparison of prime number algorithms across 9 programming languages, exploring compilation optimization, memory usage patterns, and real-world performance characteristics.
 
