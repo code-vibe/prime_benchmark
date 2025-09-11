@@ -4,11 +4,10 @@
 
 ---
 
-##  The Quest Begins
+Like many developers, I was curious: **Which programming language is the fastest?** Armed with a prime number algorithm and a Docker container, I set out to benchmark 9 different programming languages. What I discovered was far more educational than I expected.
 
-Like many developers, I was curious: **Which programming language is ## Final Performance Hierarchy
 
-After accounting ##  Lessons Learned
+##  Lessons Learned
 
 ### 1. **The Rust Safety vs Performance Spectrum**
 Rust gives you a choice that other languages don't:
@@ -78,7 +77,7 @@ Java              ~4,000           Variable           39.5s
 - **Unsafe Rust uses similar memory to safe Rust** (~2.9MB vs 2.9MB)
 - **Performance difference is purely CPU-bound**, not memory-bound
 - **Context switches remain low** in both Rust variants
-- **Memory safety overhead is computational, not spatial**st?** Armed with a prime number algorithm and a Docker container, I set out to benchmark 9 different programming languages. What I discovered was far more educational than I expected.
+- **Memory safety overhead is computational, not spatial**
 
 ##  The Experiment Setup
 
@@ -131,13 +130,10 @@ CMD ["./benchmark.sh"]
 ##  First Results: The Shocking Truth
 
 ```
-## 🏁 First Results: The Shocking Truth
-
-```
 ===== Initial Benchmark Results =====
 Language     Time(s)
 --------     -------
-Elixir       0.217     Wait, what?
+Elixir       0.217     
 C            15.29
 Go           28.51
 Java         29.11
@@ -150,7 +146,7 @@ Python       1612.73
 
 **Elixir won?!** Something was clearly wrong. Upon investigation, the Elixir file was completely empty—it wasn't computing anything! This taught me the first crucial lesson:
 
-> **Always validate your benchmarks.** Fast code that doesn't work isn't actually fast.
+ **Always validate your benchmarks.** Fast code that doesn't work isn't actually fast.
 
 ## The Real Results (After Fixing Elixir)
 
@@ -313,28 +309,6 @@ while j + p * 4 <= high {
 ```
 ```
 
-**Elixir won?!** Something was clearly wrong. Upon investigation, the Elixir file was completely empty—it wasn't computing anything! This taught me the first crucial lesson:
-
-> **Always validate your benchmarks.** Fast code that doesn't work isn't actually fast.
-
-##  The Real Results (After Fixing Elixir)
-
-After implementing a proper Elixir solution, here were the corrected results:
-
-```
-Language     Time(s)    Notes
---------     -------    -----
-C            15.29       Compiled, optimized
-Go           28.51       Great defaults
-Java         29.11       JIT optimization
-Rust         32.38      Zero-cost abstractions cost something
-C++          51.39      Template overhead?
-Elixir       ~120       Functional programming trade-offs
-Node.js      114.35     V8 is impressive for JS
-PHP          1020.72    Interpreted overhead
-Python       1612.73    Beautiful but slow
-```
-
 ## The Optimization Revelation
 
 But wait—I was comparing languages compiled with different optimization levels! This led to the most educational part of the journey.
@@ -458,7 +432,7 @@ The difference between `-O0` and `-O3` was often **4-10x performance gain**. Alw
 ### 2. **Defaults Matter**
 Go's philosophy of "good defaults" explains much of its success. You get fast code without thinking about optimization flags.
 
-### 3. **Memory Efficiency ≠ Speed**
+### 3. **Memory Efficiency !=  Speed**
 C used the least memory but wasn't always fastest. Go's garbage collector provided excellent cache locality for this algorithm.
 
 ### 4. **Algorithm Implementation Matters**
@@ -555,7 +529,6 @@ This journey reinforced that **performance is multifaceted**:
 
 The "fastest" language depends entirely on your constraints and priorities. But understanding how compilation, optimization, and memory management work will make you a better developer in any language.
 
-**Remember**: Premature optimization is the root of all evil, but understanding performance characteristics is the root of all wisdom.
 
 ---
 
