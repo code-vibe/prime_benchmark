@@ -9,8 +9,11 @@ gcc -O3 -o prime_c prime_finder.c -lm
 # C++
 g++ -O3 -o prime_cpp prime_finder.cpp
 
-# Rust
+# Rust (safe)
 rustc -C opt-level=3 prime_finder.rs -o prime_finder
+
+# Rust (unsafe)
+rustc -C opt-level=3 prime_finder_unsaferus.rs -o prime_finder_unsaferust
 
 # Go
 go build -o prime_go prime_finder.go
